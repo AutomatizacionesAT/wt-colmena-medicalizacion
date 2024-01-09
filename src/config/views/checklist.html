@@ -1,0 +1,184 @@
+<section class="container-checklist">
+    <section class="chcontainer">
+        <form class="chcontainer__form" id="formChecks">
+            <ul class="chcontainer__listas">
+                <list-check data="Debes Saber" check="A" number="1"></list-check>
+                <list-check data="GESTIÓN" check="B" number="2" disabled></list-check>
+                <list-check data="Cliente indica que desea bajar los costos de su boleta / pagar menos" check="C" number="3" disabled></list-check>
+                <list-check data="Cliente tiene SVA o CANALES PREMIUM" check="D" number="4" disabled></list-check>
+                <list-check data="Cliente solicita mejorar su plan / más velocidad" check="E" number="5" disabled></list-check>
+                <li>
+                    <input class="chcontainer__label--check hide" id="check-6" name="checkDes-6" type="checkbox" disabled>
+                </li>
+            </ul>
+        </form>
+        <form class="chcontainer__desc" id="formDesc">
+            <div class="chcontainer__content" id="checkDes-1">
+                <h1 class="chcontainer__titles">A) DEBES SABER</h1>
+                <p>Antes de realizar la actualización de promoción debes tener en cuenta los siguientes puntos:
+                </p>
+                <ul>
+                    <li><strong>1.</strong> Ejecutivos de Call Center primera línea <strong>NO DEBEN REALIZAR ACTUALIZACIONES DE PROMOCIÓN, NI TAMPOCO OFRECERLAS DE MANERA PROACTIVA</strong>.</li>
+                    <li><strong>2.</strong> Solo la plataforma de <strong>BOTÓN ROJO</strong> realiza actualizaciones de promoción.</li>
+                    <li><strong>3.</strong> Al realizar una actualización de plan, se eliminan las casillas de corro <strong>VTR</strong> que el cliente tenga activas.</li>
+                </ul>
+            </div>
+            <div class="chcontainer__content hide" id="checkDes-2">
+                <h1 class="chcontainer__titles">B) GESTIÓN</h1>
+                <p>El siguiente paso a paso te ayudará a abordar a los clientes que se contactan con nosotros para realizar cambios en su plan:</p>
+                <a class="chcontainer__button--link" href="https://isac.custhelp.com/app/answers/detail/a_id/3122/kw/actualizacion%20de%20promocion" target="_blank">iSAC</a>
+                <p><strong>1.</strong> Revisar que la boleta no esté vencida <strong>(cuenta al día)</strong>. En caso de que tenga la boleta vencida, indicar que no es posible generar un cambio de plan y que vuelva a llamar cuando su boleta esté regularizada.</p>
+                <div name="list_a">
+                    <input-list namepadre="list_a" nombre="ch_actualiza_data_a" data="¿Cuál es el motivo del cambio de plan?" number="1" op="Selecciona... - Desea bajar los costos de su boleta - Mejorar su plan"></input-list>
+                    <div class="chcontainer__content--list-show hide" name="Desea bajar los costos de su boleta">
+                        <h2>Selecciona la siguiente opción:</h2>
+                        <button class="chcontainer__content--link2" name="check-3" type="button">C) Cliente indica que desea bajar los costos de su boleta / pagar menos</button>
+                    </div>
+                    <div class="chcontainer__content--list-show hide" name="Mejorar su plan">
+                        <h2>Selecciona la siguiente opción:</h2>
+                        <button class="chcontainer__content--link2" name="check-5" type="button">E) Cliente solicita mejorar su plan / más velocidad</button>
+                    </div>
+                </div>
+            </div>
+            <div class="chcontainer__content hide" id="checkDes-3">
+                <h1 class="chcontainer__titles">C) Cliente indica que desea bajar los costos de su boleta / pagar menos</h1>
+                <ul>
+                    <li><strong>1)</strong> asesorar al cliente a eliminar SVA y/o Canales Premium para reducir costos y <strong>NO OFRECER CAMBIOS DE PLAN.</strong></li>
+                    <li><strong>2)</strong> Revisar si el cliente tiene Canales Premium y/o SVA para eliminar. Ingresa a la cuenta de servicios del cliente y revisar en la sección de <strong>PRODUCTOS INSTALADOS</strong>.</li>
+                    <i class="fa-solid fa-images chcontainer__content--i" name="image-name.png"></i>
+                </ul>
+                <div name="radio_a">
+                    <input-radio data="¿Cliente tiene SVA o CANALES PREMIUM?" nombre="ch_actualiza_data_b" namepadre="radio_a"></input-radio>
+                    <div class="chcontainer__content--radio-show hide" name="SI">
+                        <h2>Selecciona la siguiente opción:</h2>
+                        <button class="chcontainer__content--link2" name="check-4" type="button">D) Cliente tiene SVA o CANALES PREMIUM</button>
+                    </div>
+                    <div class="chcontainer__content--radio-show hide" name="NO">
+                        <h4>Cliente No tiene SVA o CANALES PREMIUM o no desea eliminarlos</h4>
+                        <ul>
+                            <li><strong>1)</strong> Si el cliente no tiene o no quiere eliminar canales Premium o SVA activos en su cuenta, <strong>indicar que no es posible bajar más los costos de su plan.</strong></li>
+                            <li><strong>2)</strong> Si el cliente indica conocer planes más atractivos, como por ejemplo revisando VTR.com, <strong>debes transferir a Botón Rojo.</strong></li>
+                        </ul>
+                        <h3>IMPORTANTE:</h3>
+                        <ul>
+                            <li><strong>1)</strong> Si la actualización de promoción que solicita el cliente conlleva a la desconexión de algún servicio principal, debes derivar a la plataforma de retención de forma asistida según la publicación <strong>PROTOCOLO DE TRANSFERENCIA Y ESCALAMIENTO A SUPERVISOR</strong></li>
+                            <a class="chcontainer__button--link" href="https://isac.custhelp.com/app/answers/detail/a_id/1781" target="_blank">ISAC</a>
+                            <li><strong>2)</strong> Si la actualización de promoción que solicita el cliente NO conlleva desconectar ningún servicio principal, debes derivar a la plataforma de Botón Rojo según la publicación <strong>PROTOCOLO DE TRANSFERENCIA Y ESCALAMIENTO A SUPERVISOR</strong></li>
+                            <a class="chcontainer__button--link" href="https://isac.custhelp.com/app/answers/detail/a_id/1781" target="_blank">ISAC</a>
+                            <li><strong>3)</strong> Si Botón Rojo tarda más de 30 segundos en atender al cliente, debes indicar que puede solicitar la actualización de promoción también a través de <strong>SUCURSAL VIRTUAL</strong>.</li>
+                            <li><strong>4)</strong> Si el cliente por algún motivo no pudo realizar la actualización de plan por sucursal virtual, <strong>transfiere de forma asistida a la plataforma de Botón rojo nuevamente</strong>.</li>
+                        </ul>
+                        <div name="list_b">
+                            <input-list namepadre="list_b" nombre="ch_actualiza_data_c" data="5) ¿A qué plataforma fue transferido el cliente?" number="3" op="Selecciona... - RETENCIÓN DE SSPP - BOTÓN ROJO - SUCURSAL VIRTUAL"></input-list>
+                        </div>
+                        <ul>
+                            <li><strong>6) REGISTRA</strong></li>
+                            <span class="chcontainer__content--span">
+                                <h1>IMPORTANTE: NO OLVIDES REGISTRAR:</h1>
+                                <ul>
+                                    <li>- Nombre de la persona que atendemos</li>
+                                    <li>- Motivo de la atención/llamada</li>
+                                    <li>- Información entregada</li>
+                                    <li>- Gestión Realizada.</li>
+                                </ul>
+                            </span>
+                        </ul>
+                        <input-check nombre="ch_actualiza_data_h" data="Observaciones del asesor *"></input-check>
+                    </div>
+                </div>
+            </div>
+            <div class="chcontainer__content hide" id="checkDes-4">
+                <h1 class="chcontainer__titles">D) Cliente tiene SVA o CANALES PREMIUM</h1>
+                <p>En caso de que el cliente tenga en su cuenta SVA y Canales Premium activos, primero debes ofrecer eliminar los SVA y después los Canales Premium.</p>
+                
+                <div name="radio_b">
+                    <input-radio data="¿Cliente acepta eliminas SVA y/o CANALES PREMIUM?" nombre="ch_actualiza_data_d" namepadre="radio_b"></input-radio>
+                    <div class="chcontainer__content--radio-show hide" name="SI">
+                        <p><strong>1)</strong> Si el cliente acepta y elimina el o los canales Premium y/o SVA, informa el monto que va a disminuir su próxima boleta.</p>
+                        <input-check nombre="ch_actualiza_data_e" data="Escriba SVA o CANAL PREMIUM eliminado"></input-check>
+                        <ul>
+                            <li>
+                                <strong>1) Para realizar la eliminación debes seguir la publicación Isac:</strong> PROCEDIMIENTO SOLICITUD DE BAJA DE SERVICIOS (RETENCIÓN/DESCONEXIÓN/ANULACIÓN).
+                            </li>
+                            <a class="chcontainer__button--link" href="https://isac.custhelp.com/app/answers/detail/a_id/3654" target="_blank">ISAC</a>
+                            <li>
+                                <strong>2) </strong> Si el cliente insiste en bajar aún más el valor de su boleta, debes transferir a Botón Rojo según el protocolo de transferencia:
+                            </li>
+                            <a class="chcontainer__button--link" href="https://isac.custhelp.com/app/answers/detail/a_id/1781" target="_blank">ISAC</a>
+                        </ul>
+                        <h2>Apóyate con el siguiente script:</h2>
+                        <h3>VOZ</h3>
+                        <span class="chcontainer__content--span">
+                            <i>“Sr. XXXX las únicas opciones para rebajar valores es eliminar SVA y/o canales Premium, sin embargo, lo voy a transferir con un equipo especialista para revisar su caso.”
+                            </i>
+                        </span>
+                        <h3>NO VOZ</h3>
+                        <span class="chcontainer__content--span">
+                            <i>“XXXX las únicas opciones para rebajar valores es eliminar SVA y/o canales Premium, sin embargo, te voy a transferir con un equipo especialista para revisar tu caso.”
+                            </i>
+                        </span>
+                        <h3>REGISTRA</h3>
+                        <ul>
+                            <li><strong>Razón:</strong> Atención Comercial</li>
+                            <li><strong>Detalle Razón:</strong> Cambio de serv contrat/Susp</li>
+                            <li><strong>Detalle Razón:</strong> SVA canal premium</li>
+                        </ul>
+                        <span class="chcontainer__content--span">
+                            <h1>IMPORTANTE: NO OLVIDES REGISTRAR:</h1>
+                            <ul>
+                                <li>- Nombre de la persona que atendemos</li>
+                                <li>- Motivo de la atención/llamada</li>
+                                <li>- Información entregada</li>
+                                <li>- Gestión Realizada.</li>
+                            </ul>
+                        </span>
+                        <input-check nombre="ch_actualiza_data_h" data="Observaciones del asesor *"></input-check>
+                    </div>
+                    <div class="chcontainer__content--radio-show hide" name="NO">
+                        <p>Guíate por la opción “Cliente No tiene SVA o CANALES PREMIUM” en el punto anterior "C) Cliente indica que desea bajar los costos de su boleta / pagar menos"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chcontainer__content hide" id="checkDes-5">
+                <h1 class="chcontainer__titles">E) Cliente solicita mejorar su plan / más velocidad</h1>
+                <p>En estos casos, que el cliente explícitamente dice que quiere mejorar su plan, lo que debes hacer es asesorar al cliente a elegir el mejor plan apuntando a mejorar sus servicios.</p>
+                <p><strong>1)</strong> Revisar en la cuenta de servicios del cliente, el plan actual que tiene activo:</p>
+                <i class="fa-solid fa-images chcontainer__content--i" name="image-name.png"></i>
+                <p><strong>2)</strong> Asesorar al cliente de los planes que tenemos disponibles según lo que el cliente desee mejorar, para esto puedes apoyarte en:</p>
+                <p><strong>• Plan comercial:</strong></p>
+                <a class="chcontainer__button--link" href="https://isac.custhelp.com/app/answers/detail/a_id/211" target="_blank">ISAC</a>
+                <p><strong>• Página web de VTR:</strong></p>
+                <a class="chcontainer__button--link" href="https://vtr.com/productos/hogar-packs/triple-pack-internet-television-telefonia" target="_blank">ISAC</a> <br>
+                <div name="list_c">
+                    <input-list namepadre="list_c" nombre="ch_actualiza_data_f" data="3) Informe características de plan vigente según:" number="8" op="Selecciona... - Plan comercial - vtr.com"></input-list>
+                </div> <br>
+                <p><strong>4)</strong> Solo cuando al cliente le haya quedado claro del plan que va a tomar, debes transferir de forma asistida a <strong>Botón Rojo</strong>, puedes revisar la publicación <strong>PROTOCOLO DE TRANSFERENCIA Y ESCALAMIENTO A SUPERVISOR:</strong></p>
+                <a class="chcontainer__button--link" href="https://isac.custhelp.com/app/answers/detail/a_id/1781" target="_blank">ISAC</a><br>
+                <input-check nombre="ch_actualiza_data_g" data="5) ¿Cuál fue el plan elegido por el cliente?"></input-check><br>
+                <h3>6) REGISTRA</h3>
+                <ul>
+                    <li style="width: 250px;"><strong>Razón:</strong> General</li>
+                    <li><strong>Detalle Razón:</strong> Transferencias</li>
+                    <li><strong>Detalle Razón:</strong> Transfiere a Botón Rojo</li>
+                </ul>
+                <span class="chcontainer__content--span">
+                    <h1>IMPORTANTE: NO OLVIDES REGISTRAR:</h1>
+                    <ul>
+                        <li>- Nombre de la persona que atendemos</li>
+                        <li>- Motivo de la atención/llamada</li>
+                        <li>- Información entregada</li>
+                        <li>- Gestión Realizada.</li>
+                    </ul>
+                </span>
+                <input-check nombre="ch_actualiza_data_h" data="Observaciones del asesor *"></input-check>
+            </div>
+            <div class="chcontainer__content hide" id="checkDes-6">
+                <h1 class="chcontainer__titles">FIN DEL PROCESO</h1>
+            </div>
+        </form>
+        <div class="chcontainer__btns">
+            <button type="reset" class="chcontainer__btns--btn button__button" id="resetAllForm">Reiniciar</button>
+            <button type="button" class="chcontainer__btns--btn button__button other" id="btnData" name="ch_actualiza">Datos</button>
+        </div>
+    </section>
+</section>

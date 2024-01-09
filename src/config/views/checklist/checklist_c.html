@@ -1,0 +1,176 @@
+<section class="container-checklist">
+    <section class="chcontainer">
+        <form class="chcontainer__form" id="formChecks">
+            <ul class="chcontainer__listas">
+                    <list-check
+                        data="Importante"
+                        check="A"
+                        number="1"
+                    ></list-check>
+                    <list-check
+                        data="Valida"
+                        check="B"
+                        number="2"
+                        disabled
+                    ></list-check>
+                    <list-check
+                        data="Gestiona"
+                        check="C"
+                        number="3"
+                        disabled
+                    ></list-check>
+                    <list-check
+                        data="Registro"
+                        check="D"
+                        number="4"
+                        disabled
+                    ></list-check>                                                                   
+                    <li>
+                        <input class="chcontainer__label--check hide" id="check-5" name="checkDes-5" type="checkbox" disabled>
+                    </li>
+            </ul>
+        </form>
+        <form class="chcontainer__desc" id="formDesc">
+            <div class="chcontainer__content" id="checkDes-1">
+                <h1 class="chcontainer__titles">A) IMPORTANTE</h1>
+                <p>1.	¡No olvides hacer uso de la iSAC!</p>
+                <a class="chcontainer__button--link" href="https://isac.custhelp.com/app/answers/detail/a_id/3451" target="_blank">iSAC</a>
+                <p>2.	Recuerda los plazos de los recaudadores:</p>
+                <h4>VTR.COM -> 72 horas hábiles <hr />
+                Recaudadores externos -> 24 horas hábiles
+                </h4>
+                <p>3.	Una vez ingresa el pago en nuestro sistema, los servicios se <strong>restablecerán en una hora máximo.</strong></p>
+                <p>4.	La suspensión unidireccional, por mora, se lleva a cabo según el <strong>flujo de cobranza.</strong></p>
+                <a class="chcontainer__button--link" href="https://isac.custhelp.com/app/answers/detail/a_id/3451" target="_blank">iSAC</a>
+                <p>5.	<strong>El corte</strong> de los servicios por <strong>mora</strong> se realiza en la <strong>madrugada</strong>, por ello, el cliente puede no percibir el corte de sus servicios</p>
+            </div>
+            <div class="chcontainer__content hide" id="checkDes-2">
+                <h1 class="chcontainer__titles">B) VALIDA</h1>
+                <p>1.	Revisa la boleta para confirmar si se le realizo el cobro por corte y reposición</p>
+                <i class="fa-solid fa-images chcontainer__content--i" name="image-name.png"></i>
+                <p>2.	Revisar si el pago fue posterior a la fecha de corte.</p>
+                <p>Fecha de pago:</p>
+                <i class="fa-solid fa-images chcontainer__content--i" name="image-name.png"></i>
+                <p>Fecha de corte:</p>
+                <i class="fa-solid fa-images chcontainer__content--i" name="image-name.png"></i>
+                <p>3.	Cliente nos contactó o tuvo inhibición:</p>
+                <i class="fa-solid fa-images chcontainer__content--i" name="image-name.png"></i>
+                <p>4.	Cliente tuvo ajustes excepcionales</p>
+                <i class="fa-solid fa-images chcontainer__content--i" name="image-name.png"></i>
+            </div>
+            <div class="chcontainer__content hide" id="checkDes-3">
+                <h1 class="chcontainer__titles">C) GESTIONA</h1>
+                <p>1.	Revisar si el pago fue posterior a la fecha de corte. </p>
+                <div name="radio_a">
+                    <input-radio namepadre="radio_a"  nombre="ch_ajustes_data_a" data="¿El pago fue posterior a la fecha de corte?"></input-radio>
+                    <div class="chcontainer__content--radio-show hide" name="SI">
+                        <p><strong>CORRESPONDE COBRO EN BOLETA</strong></p>
+                        <p>Debes validar: </p>
+                        <ul>
+                            <li>- la fecha de pago supera la fecha de corte. </li>
+                            <li>- Revisar en Actividades:</li>
+                            <li>- Cliente nos contactó indicando inconvenientes para pago</li>
+                            <li>- Cliente tuvo inhibición</li>
+                        </ul>
+                        <div name="radio_b">
+                            <input-radio namepadre="radio_b"  nombre="ch_ajustes_data_b" data="Cliente nos contactó o tuvo inhibición?"></input-radio>
+                            <div class="chcontainer__content--radio-show hide" name="SI">
+                                <p><strong>PUEDES REALIZAR EL AJUSTE:</strong></p>
+                                <ul>
+                                    <li>-	Ajustar valor de Corte y Reposición.</li>
+                                    <li>-	Submotivo: de ajuste <strong>PROMOCIÓN MAL EXPLICADA</strong></li>
+                                </ul>
+                                <p>En la observación del Ajuste registra el <strong>#CORTEYREPOSICION</strong> e incluye además una breve descripción.</p>
+                                <h3>INFORMA</h3>
+                                <h4>VOZ</h4>
+                                <span  class="chcontainer__content--span"><i>“Sr.(a). XXX, de acuerdo al inconveniente que me comenta, y revisando en sistema, descontaré de su cuenta el valor de $XXXX. Tenga presente que tiene un plazo de 5 días desde el vencimiento de su boleta para el pago de su cuenta”</i></span>
+                                <h4>NO VOZ</h4>
+                                <span  class="chcontainer__content--span"><i>“XXX, de acuerdo al inconveniente que me comentas, y revisando en sistema, descontaré de tu cuenta el valor de $XXXX. Ten presente que tienes un plazo de 5 días desde el vencimiento de tu boleta para el pago de tu cuenta”</i></span>
+                            </div>
+                            <div class="chcontainer__content--radio-show hide" name="NO">
+                                <p>Informa que el cobro está <strong>correctamente</strong> en su boleta.</p>
+                                <h3>INFORMA</h3>
+                                <h4>VOZ</h4>
+                                <span  class="chcontainer__content--span"><i>“Sr(a). XXX, tiene un plazo de 5 días desde el vencimiento de su boleta para el pago de su cuenta. Cómo el pago fue realizado el día XXX el servicio se va a corte y por ello se genera el cobro de $XXX (mencionar el cobro que tiene el cliente)”</i></span>
+                                <h4>NO VOZ</h4>
+                                <span  class="chcontainer__content--span"><i>“XXX, tienes un plazo de 5 días desde el vencimiento de tu boleta para el pago de su cuenta. Cómo el pago fue realizado el día XXX el servicio se va a corte y por ello se genera el cobro de $XXX (mencionar el cobro que tiene el cliente)”</i></span>
+                                <div name="radio_c">
+                                    <input-radio namepadre="radio_c"  nombre="ch_ajustes_data_c" data="Cliente está de acuerdo con la información?"></input-radio>
+                                    <div class="chcontainer__content--radio-show hide" name="SI">
+                                        <p>Puedes <strong>FINALIZAR LA ATENCIÓN</strong></p>
+                                    </div>
+                                    <div class="chcontainer__content--radio-show hide" name="NO">
+                                        <p>Si cliente <strong>insiste</strong> y no está de acuerdo con el cargo en su boleta, debes revisar si ha tenido descuento en los últimos 3 meses por el mismo motivo.</p>
+                                        <i class="fa-solid fa-images chcontainer__content--i" name="image-name.png"></i>
+                                        <p>Cliente tuvo ajustes: Informar que se realizó un ajuste por excepción en los últimos 3 meses.</p>
+                                        <div name="radio_d">
+                                            <input-radio namepadre="radio_d"  nombre="ch_ajustes_data_d" data="Cliente tuvo ajustes excepcionales?"></input-radio>
+                                            <div class="chcontainer__content--radio-show hide" name="SI">
+                                                <p>Si ya se realizó ajuste por excepción en los últimos 3 meses.</p>
+                                                <h3>INFORMA</h3>
+                                                <h4>VOZ</h4>
+                                                <span  class="chcontainer__content--span"><i>“Sr(a). XXX, usted ya tuvo un ajuste por el mismo motivo en el mes XXX, por lo que no podemos realizar un descuento nuevamente. Le recomendamos realizar el pago de su boleta antes de la fecha de corte.”</i></span>
+                                                <h4>NO VOZ</h4>
+                                                <span  class="chcontainer__content--span"><i>“XXX, ya tuviste un ajuste por el mismo motivo en el mes XXX, por lo que no podemos realizar un descuento nuevamente. Te recomendamos realizar el pago de tu boleta antes de la fecha de corte.”</i></span>
+                                            </div>
+                                            <div class="chcontainer__content--radio-show hide" name="NO">
+                                                <ul>
+                                                    <li>-	Cliente no tuvo ajustes </li>
+                                                    <li>-	Debes elegir el submotivo de ajuste SERVICIO ADIC. NO SOLICITADO</li>
+                                                    <li>-	#CORTEYREPOSICION</li>
+                                                </ul>
+                                                <a class="chcontainer__button--link" href="https://isac.custhelp.com/app/answers/detail/a_id/3451" target="_blank">iSAC</a>
+                                                <h3>INFORMA</h3>
+                                                <h4>VOZ</h4>
+                                                <span  class="chcontainer__content--span"><i>“Sr.(a). XXX, de acuerdo al inconveniente que me comenta, y revisando en sistema, descontaré de su cuenta el valor de $XXXX. Tenga presente que tiene un plazo de 5 días desde el vencimiento de su boleta para el pago de su cuenta”</i></span>
+                                                <h4>NO VOZ</h4>
+                                                <span  class="chcontainer__content--span"><i>“XXX, de acuerdo al inconveniente que me comentas, y revisando en sistema, descontaré de tu cuenta el valor de $XXXX. Ten presente que tienes un plazo de 5 días desde el vencimiento de tu boleta para el pago de tu cuenta”</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chcontainer__content--radio-show hide" name="NO">
+                        <p>Si la fecha de pago del cliente no supera la fecha de corte.</p>
+                        <p><strong>NO CORRESPONDE EL COBRO EN BOLETA</strong></p>
+                        <ul>
+                            <li>-	Ajustar valor de Corte y Reposición.</li>
+                            <li>-	Submotivo: de ajuste <strong>PROMOCIÓN MAL EXPLICADA</strong></li>
+                            <li>-	En la observación del Ajuste registra el <strong>#CORTEYREPOSICION</strong> e incluye además una breve descripción.</li>
+                        </ul>
+                        <h3>INFORMA</h3>
+                        <h4>VOZ</h4>
+                        <span  class="chcontainer__content--span"><i>“Sr.(a). XXX, le pedimos disculpas por el inconveniente. El valor $XXXX será descontado de su boleta.”</i></span>
+                        <h4>NO VOZ</h4>
+                        <span  class="chcontainer__content--span"><i>“XXX, te pedimos disculpas por el inconveniente. El valor $XXXX será descontado de tu boleta.”</i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="chcontainer__content hide" id="checkDes-4">
+                <h1 class="chcontainer__titles">D) REGISTRO</h1>
+                <ul>
+                    <li><strong>Razón:</strong> Atención Comercial</li>
+                    <li><strong>Detalle Razón:</strong> Explicación cobros y boleta</li>
+                    <li><strong>Detalle Razón:</strong> Explic Cobros Corte y Repo</li>
+                </ul>
+                <i class="fa-solid fa-images chcontainer__content--i" name="image-name.png"></i>
+                <p>En la observación registra <strong>#CORTEYREPOSICION (sólo si hiciste el ajuste por excepción)</strong></p>
+                <h3>¡NO OLVIDAR!</h3>
+                <p><strong>Nota de crédito</strong></p>
+                <h4>VOZ</h4>
+                <span  class="chcontainer__content--span"><i>"Sr(a) XXX le pido disculpas por el error y las molestias causadas. Le informo que hemos realizado el ajuste por un valor de $xxx y el saldo actualizado de su boleta es de $xxxx. Se le enviará una nota de crédito por mail con el monto. Le recuerdo que puede visualizar el saldo actualizado de su boleta en Sucursal Virtual de vtr.com"</i></span>
+                <h4>NO VOZ</h4>
+                <span  class="chcontainer__content--span"><i>"XXX lamentamos lo ocurrido, hemos realizado el ajuste y el saldo actualizado de tu boleta es de $XXX. Te enviaremos una nota de crédito por mail con el monto. Te recuerdo que podrás visualizarlo en la Sucursal Virtual de vtr.com con tu usuario y clave"</i></span>
+            </div>
+            <div class="chcontainer__content hide" id="checkDes-5">
+                <h1 class="chcontainer__titles">FIN DEL PROCESO</h1>
+            </div>
+        </form>
+        <div class="chcontainer__btns">
+            <button type="reset" class="chcontainer__btns--btn button__button" id="resetAllForm">Reiniciar</button>
+            <button type="button" class="chcontainer__btns--btn button__button other" id="btnData" name="ch_corte_repo">Datos</button>
+        </div>
+    </section>
+</section>
