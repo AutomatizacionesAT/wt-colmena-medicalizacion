@@ -2,7 +2,7 @@
 
 .bx-home {
     h1 {
-        font-size: 9rem;
+        font-size: 7rem;
         font-weight: 700;
         &:nth-child(1) {
             color: $p-color;
@@ -12,10 +12,12 @@
         }
         &:nth-child(3) {
             color: $s2-color;
+            font-weight: 900
         }
         &:nth-child(4) {
             color: $s2-color;
-            font-size: 7rem;
+            font-size: 8rem;
+            font-weight: 900;
         }
     }
     figure {

@@ -8,6 +8,8 @@ import LeyesMedic from './medicalizacion/leyes.controller.js'
 import LeyesInfoYMedios from './info_y_medios/leyes.controller.js'
 import LeyesPrevencion from './prevencion/leyes.controller.js'
 import NotFound from './notFound.controller.js'
+// opciones S
+import codigos from './opcionesS/codigos.controller.js'
 
 const views = {
     home: Home,
@@ -19,6 +21,7 @@ const views = {
     LeyesInfoYMedios,
     LeyesPrevencion,
     GuionesChat,
+    codigos,
     notFound: NotFound
 }
 

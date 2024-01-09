@@ -51,8 +51,8 @@ const navList = [
         SUBLIST: ["Guiones", "Normativa"]
     },
     {
-        SEGMENTO: "INFORMACIONYMEDIOS",
-        SUBLIST: ["Guiones", "Normativa"]
+        SEGMENTO: "OPCIONES",
+        SUBLIST: ["Códigos", "Glosario"]
     },
     {
         SEGMENTO: "PREVENCION",
@@ -88,9 +88,14 @@ navItems.forEach((linkItem) => {
         // }
 
 
-        navItems.forEach((ancor) => {ancor.parentNode.classList.remove('active')})
+        navItems.forEach((ancor) => {
+            ancor.parentNode.classList.remove('active')
+            secondMenu.addEventListener("click", () => { 
+                secondMenu.innerHTML = ''
+                linkItem.parentNode.classList.remove('active')
+            })
+        })
         linkItem.parentNode.classList.add('active')
-
     })
 })
 /** END NAVBAR */

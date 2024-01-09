@@ -5,8 +5,10 @@ let root = document.getElementById("root");
 
 const router = async (route) => {
     root.innerHTML = "";
-    const goRoute =vista=> root.appendChild(vista)
-    switch (route) {
+    const goRoute = vista => root.appendChild(vista)
+    // En resumen, usar decodeURIComponent garantiza que las comparaciones de rutas se realicen correctamente, especialmente cuando estás tratando con caracteres especiales en las URLs.
+    const decodedRoute = decodeURIComponent(route);
+    switch (decodedRoute) {
         case "": {
             return goRoute(views.home());
         }
@@ -40,6 +42,10 @@ const router = async (route) => {
         case "#/localbase": {
             return goRoute(views.excel());
         }   
+        // opciones S
+        case "#/OPCIONESCódigos": {
+            return goRoute(views.codigos());
+        }
         default: {
             return root.appendChild(views.notFound());
         }
