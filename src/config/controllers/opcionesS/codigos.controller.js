@@ -1,6 +1,6 @@
 import Hook from '@views/window/hook.html'
 import Codigos from '@views/opcionesS/codigos.html'
-import '@styles/view_guiones.scss'
+import '@styles/view_codigos.scss'
 // import { DB_Guiones_InfoYMedios } from '@javascript/API/guiones.infoymedios.js'
 
 import { buscarElemento, copiarValor } from '@javascript/funcionales/funcionesGlobales.js'
@@ -10,7 +10,7 @@ export default () => {
     const subdocument = document.createElement('div')
     subdocument.className = 'hook'
     subdocument.innerHTML = Hook + Codigos
-    const stylesParentElemInHook = subdocument.querySelector('.container')
+    const stylesParentElemInHook = subdocument.querySelector('.containerCod')
 
     /** FUNCIONES INTERNAS DEL ELEMENTO**/
    
@@ -24,9 +24,9 @@ export default () => {
                     subdocument.classList.add('active')
                     stylesParentElemInHook.classList.add('active')
 
-                    document.querySelector('#searcherGuion').addEventListener('keyup', (e) => {
-                        buscarElemento(e.target.value)
-                    })
+                    // document.querySelector('#searcherGuion').addEventListener('keyup', (e) => {
+                    //     buscarElemento(e.target.value)
+                    // })
 
                     break
                 case 'close': {
