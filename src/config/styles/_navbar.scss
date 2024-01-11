@@ -125,7 +125,6 @@
     &__search {
         display: flex;
         align-items: center;
-        background: white;
         border-left: 2px solid $s2-color;
         padding: 0 12px;
         height: 100%;
@@ -138,8 +137,8 @@
                 font-size: 1.6rem;
                 padding: 2px 2px 2px 8px;
                 outline: none;
-                background:$s-color;
-                color: $w-color;
+                background:$w-color;
+                color: $s-color;
                 width: 200px;
                 border-radius: 12px;
                 -webkit-border-radius: 12px;
