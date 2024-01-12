@@ -10,6 +10,7 @@ import LeyesPrevencion from './prevencion/leyes.controller.js'
 import NotFound from './notFound.controller.js'
 // opciones S
 import codigos from './opcionesS/codigos.controller.js'
+import glosario from './opcionesS/glosario.controller.js'
 
 const views = {
     home: Home,
@@ -22,6 +23,7 @@ const views = {
     LeyesPrevencion,
     GuionesChat,
     codigos,
+    glosario,
     notFound: NotFound
 }
 

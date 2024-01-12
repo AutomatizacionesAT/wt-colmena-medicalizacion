@@ -46,6 +46,9 @@ const router = async (route) => {
         case "#/OPCIONESCódigos": {
             return goRoute(views.codigos());
         }
+        case "#/OPCIONESGlosario": {
+            return goRoute(views.glosario());
+        }   
         default: {
             return root.appendChild(views.notFound());
         }

@@ -92,7 +92,7 @@ navItems.forEach((linkItem) => {
             ancor.parentNode.classList.remove('active')
             secondMenu.addEventListener("click", () => { 
                 secondMenu.innerHTML = ''
-                linkItem.parentNode.classList.remove('active')
+                // linkItem.parentNode.classList.remove('active')
             })
         })
         linkItem.parentNode.classList.add('active')
