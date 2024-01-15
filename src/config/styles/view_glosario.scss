@@ -70,9 +70,15 @@
             .codi{
                 background-color: #00000094;
                 color: $w-color;
-                font-size: $title2;
-                padding: 30px 35px 30px 35px;
+                font-size: 3rem;
+                padding: 25px 30px 25px 30px;
                 border-radius: 50px;
+            }
+            .abreteSesamo{
+                cursor: pointer;
+                background-color: $p3-color;
+                border-radius: 5px;
+                font-size: $paragraph2;
             }
         }
         .more-info {
@@ -81,7 +87,6 @@
             position: absolute;
             left: 150px;
             height: 100%;
-            cursor: pointer;
             h1 {
                 color: #fff;
                 margin-bottom: 0;
@@ -133,7 +138,6 @@
         box-sizing: border-box;
         padding: 1rem;
         padding-top: 0;
-        cursor: pointer;
         .conti{
             display: flex;
             flex-direction: column;

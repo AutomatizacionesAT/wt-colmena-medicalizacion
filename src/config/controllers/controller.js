@@ -11,6 +11,7 @@ import NotFound from './notFound.controller.js'
 // opciones S
 import codigos from './opcionesS/codigos.controller.js'
 import glosario from './opcionesS/glosario.controller.js'
+import corrector from './opcionesS/corrector.controller.js'
 
 const views = {
     home: Home,
@@ -24,6 +25,7 @@ const views = {
     GuionesChat,
     codigos,
     glosario,
+    corrector,
     notFound: NotFound
 }
 

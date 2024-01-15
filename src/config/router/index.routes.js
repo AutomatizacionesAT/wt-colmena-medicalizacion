@@ -48,7 +48,10 @@ const router = async (route) => {
         }
         case "#/OPCIONESGlosario": {
             return goRoute(views.glosario());
-        }   
+        } 
+        case "#/OPCIONESCorrector": {
+            return goRoute(views.corrector());
+        }     
         default: {
             return root.appendChild(views.notFound());
         }

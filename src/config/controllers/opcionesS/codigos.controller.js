@@ -24,6 +24,7 @@ export default () => {
                             Código
                         </div>
                         <div class="codi center">
+                            <h1>${obj.cod}</h1>
                             <i class="fa-solid fa-code"></i>
                         </div>
                         <div class="level center">

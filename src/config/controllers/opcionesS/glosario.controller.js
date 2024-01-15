@@ -16,7 +16,7 @@ export default () => {
     /** FUNCIONES INTERNAS DEL ELEMENTO**/
     BD_Gestion.forEach(obj => {
         let componente = `
-            <div class="cardGlo dato-buscado abreteSesamo">
+            <div class="cardGlo dato-buscado">
                 <div class="additional">
                     <div class="user-card">
                         <div class="level center">
@@ -24,6 +24,9 @@ export default () => {
                         </div>
                         <div class="codi center">
                             <i class="fa-solid fa-book-atlas"></i>
+                        </div>
+                        <div class="level center abreteSesamo">
+                            Ampliar
                         </div>
                     </div>
                     <div class="more-info">
