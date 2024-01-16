@@ -1,0 +1,48 @@
+@use 'variables' as *;
+
+.correctorbx {
+    align-self: center;
+    height: 80%;
+    width: 95%;
+    margin: 0 auto;
+
+    .quill-editor{
+        background-color: rgba(255, 253, 253, 0.932);
+        min-height: 20vh;
+        height: 40vh;
+        max-height: 50vh;
+    }
+    .ql-toolbar.ql-snow {
+        background-color: $p-color;
+    }
+    .ql-snow .ql-picker {
+        color: $w-color;
+    }
+    .ql-snow .ql-picker-options .ql-picker-item{
+        color: black;
+    }
+    .box{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding: 2rem 1rem 1rem 1rem;
+        button{
+            background-color: $p3-color;
+            width: 40%;
+            padding: 1rem;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            color: $w-color;
+            font-weight: 900;
+            transition: all 0.3s ease;
+            &:hover{
+                transform: translateY(15px);
+                box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.75);
+            }
+        }
+        .red{
+            color: red;
+        }
+    }
+}

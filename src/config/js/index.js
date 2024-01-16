@@ -7,7 +7,12 @@ import 'animate.css';
 import '@styles/style.scss'
 import '@styles/_navbar.scss'
 import readXlsxFile from 'read-excel-file'
-
+// 
+import Quill from 'quill';
+import '@javascript/librerias/notas/quill.js'
+import '@styles/notas/core.css'
+import '@styles/notas/snow.css'
+// 
 /** ESTANDARS */
 import {router} from '@router/index.routes.js' //*
 import {navListPop} from '@javascript/funcionales/alertas.js'
@@ -101,3 +106,67 @@ navItems.forEach((linkItem) => {
 /** END NAVBAR */
 
 
+const btnMisNotas = document.getElementById('btnMisNotas')
+const editor = document.getElementById('editor')
+const fullEditor = document.getElementById('fullEditor')
+const copiMisNotas = document.getElementById('copiMisNotas')
+
+let toolbarOptions = [
+    [{ 'size': ['small', false, 'large', 'huge'] }],
+    ['bold', 'italic', 'underline'],
+    ['link'],
+    [{ 'header': 1 }],
+    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+    [{ 'align': [] }],
+    [{ 'indent': '-1' }, { 'indent': '+1' }],
+    [{ 'color': [] }, { 'background': [] }],
+];
+
+
+// Cuadro de texto enriquecido 'Mis notas'
+let quill = new Quill('#editor', {
+    modules: {
+        toolbar: toolbarOptions,
+    },
+    theme: 'snow'
+});
+
+
+// Mis notas se ejecuta visible entonces lo ocutalmos
+fullEditor.style.display = 'none'
+// al cargar la pagina lee el portapapeles y traemos lo que este en el
+let dataRecuperado = sessionStorage.getItem("misNotas")
+let newContents = JSON.parse(dataRecuperado)
+// se le asigna el valor del portapaples en el texto enriquecido
+quill.setContents(newContents)
+
+const saveSession = () => {
+    let contenido = quill.getContents()
+
+    // convierto el objeto en string para luego almacenarlo en el portapapeles
+    let objString = JSON.stringify(contenido)
+    sessionStorage.setItem('misNotas', objString)
+
+    quill.deleteText(0, 10000)
+    quill.setContents(contenido)
+}
+
+const toggleNotes = (e) => {
+    if (e.target.className.includes('active')) {
+        e.target.classList.remove('active')
+        fullEditor.style.display = 'none'
+        saveSession()
+    } else {
+        e.target.classList.add('active')
+        fullEditor.removeAttribute('style')
+    }
+}
+
+const copiarMisNotas = () => {
+    quill.setSelection(0, 10000)
+    document.execCommand('copy')
+}
+
+btnMisNotas.addEventListener('click', toggleNotes)
+copiMisNotas.addEventListener('click', copiarMisNotas)
+window.addEventListener('beforeunload', saveSession);

@@ -1,10 +1,10 @@
-import Quill from 'quill';
-import Hook from '@views/window/hook.html'
 import Codigos from '@views/opcionesS/corrector.html'
-import '@styles/view_codigos.scss'
+import Quill from 'quill';
+import '@javascript/librerias/notas/quill.js'
+import Hook from '@views/window/hook.html'
+import '@styles/_corrector.scss'
 import '@styles/notas/core.css'
 import '@styles/notas/snow.css'
-import '@javascript/librerias/notas/quill.js'
 
 import { buscarElemento, copiarValor } from '@javascript/funcionales/funcionesGlobales.js'
 
@@ -47,58 +47,63 @@ export default () => {
         [{ 'color': [] }, { 'background': [] }],
         ['image', 'video']
     ];
-    
-    document.addEventListener('DOMContentLoaded', function () {
-        const stops = document.querySelector('#stops');
-        const copiar = document.querySelector("#copiar");
-        const editorElement = document.getElementById('editor');
-        if (editorElement) {
 
-            let quill = new Quill('#editor', {
-                modules: {
-                    toolbar: toolbarOptions,
-                },
-                theme: 'snow'
-            });
+    const stops = subdocument.querySelector('#stops');
+    const copiar = subdocument.querySelector("#copiar");
+    const editorElement = subdocument.querySelector('.quill-editor');
+    console.log(copiar);
+    if (editorElement) {
+        let quill = new Quill(editorElement, {
+            modules: {
+                toolbar: toolbarOptions,
+            },
+            theme: 'snow'
+        });
 
-            quill.root.dataset.placeholder = 'Redacta aquí tu texto...';
+        quill.root.dataset.placeholder = 'Redacta aquí tu texto...';
 
-            const recognition = new webkitSpeechRecognition();
-            
-            recognition.lang = 'es-ES';
-            
-            recognition.continuous = true;
+        const recognition = new webkitSpeechRecognition();
 
-            let isRecognitionRunning = false;
+        recognition.lang = 'es-ES';
 
-            recognition.onresult = (event) => {
-                const result = event.results[event.resultIndex][0].transcript;
-                quill.clipboard.dangerouslyPasteHTML(quill.getLength(), result);
-            };
+        recognition.continuous = true;
+        let isRecognitionRunning = false;
 
-            recognition.onstart = () => {
-                isRecognitionRunning = true;
-                stops.innerHTML = '<i class="fa-solid fa-microphone red"></i> --- Detener Reconocimiento de Voz --- <i class="fa-solid fa-microphone red"></i>';
-            };
+        recognition.onresult = (event) => {
+            const result = event.results[event.resultIndex][0].transcript;
+            quill.clipboard.dangerouslyPasteHTML(quill.getLength(), result);
+        };
 
-            recognition.onend = () => {
-                isRecognitionRunning = false;
-                stops.innerHTML = '<i class="fa-solid fa-microphone"></i> --- Activar Reconocimiento de Voz --- <i class="fa-solid fa-microphone"></i>';
-            };
+        recognition.onstart = () => {
+            isRecognitionRunning = true;
+            stops.innerHTML = '<i class="fa-solid fa-microphone red"></i> --- Detener Reconocimiento de Voz --- <i class="fa-solid fa-microphone red"></i>';
+        };
 
-            const toggleRecognition = () => {
-                if (isRecognitionRunning) {
-                    recognition.stop();
-                } else {
-                    recognition.start();
-                }
-            };
+        recognition.onend = () => {
+            isRecognitionRunning = false;
+            stops.innerHTML = '<i class="fa-solid fa-microphone"></i> --- Activar Reconocimiento de Voz --- <i class="fa-solid fa-microphone"></i>';
+        };
 
-            stops.addEventListener('click', () => {
-                toggleRecognition();
-            });
+        const toggleRecognition = () => {
+            if (isRecognitionRunning) {
+                recognition.stop();
+            } else {
+                recognition.start();
+            }
+        };
 
-        }
-    });
+        stops.addEventListener('click', () => {
+            toggleRecognition();
+        });
+        
+        const copiarContenidoEditor = () => {
+            const contenido = quill.getText();
+            copiarValor(contenido);
+        };
+
+        copiar.addEventListener('click', () => {
+            copiarContenidoEditor();
+        });
+    }
     return subdocument
 }

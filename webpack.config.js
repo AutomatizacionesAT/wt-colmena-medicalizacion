@@ -81,6 +81,7 @@ module.exports = {
       '@styles': __dirname + '/src/config/styles/',
       '@views': __dirname + '/src/config/views/',
       '@router': __dirname + '/src/config/router/',
+      'quill': 'quill/dist/quill.js',
     }
   },
   performance: { // 
