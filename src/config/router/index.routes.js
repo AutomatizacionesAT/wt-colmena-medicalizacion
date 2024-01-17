@@ -39,6 +39,9 @@ const router = async (route) => {
         case "#/GUIONESChat": {
             return goRoute(views.GuionesChat());
         }
+        case "#/aplicativosWeb": {
+            return goRoute(views.aplicativosWeb());
+        }
         case "#/localbase": {
             return goRoute(views.excel());
         }   

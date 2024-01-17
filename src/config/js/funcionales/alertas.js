@@ -72,7 +72,8 @@ export const popCardGuionBig = (html) => {
     html: html,
     width: 900,
     showConfirmButton: true,
-    confirmButtonText: 'Copiar Guión'
+    confirmButtonText: 'Copiar Guión',
+    heightAuto: false,
   }).then(res=>{
     if (res.isConfirmed) {
       navigator.clipboard.writeText(textGuion)

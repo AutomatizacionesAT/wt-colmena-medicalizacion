@@ -12,6 +12,7 @@ import NotFound from './notFound.controller.js'
 import codigos from './opcionesS/codigos.controller.js'
 import glosario from './opcionesS/glosario.controller.js'
 import corrector from './opcionesS/corrector.controller.js'
+import aplicativosWeb from './aplicativosWeb.controller.js'
 
 const views = {
     home: Home,
@@ -26,6 +27,7 @@ const views = {
     codigos,
     glosario,
     corrector,
+    aplicativosWeb,
     notFound: NotFound
 }
 

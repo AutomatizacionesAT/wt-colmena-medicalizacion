@@ -21,6 +21,7 @@ export default () => {
         icon: "question",
         width: '80%',
         html: html,
+        heightAuto: false,
         customClass: {
           htmlContainer: 'myswal-html'
         }
