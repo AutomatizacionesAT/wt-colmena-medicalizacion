@@ -3,6 +3,8 @@ import Leyes from '@views/leyes/medicalizacion.html'
 import '@styles/view_leyes.scss'
 import {DB_leyes_medicalizacion} from '@javascript/API/leyes.medicalizacion.js'
 import Swal from 'sweetalert2'
+import  {buscarElemento, copiarValor} from '@javascript/funcionales/funcionesGlobales.js'
+
 
 
 export default () => {
@@ -53,6 +55,10 @@ export default () => {
           popNormativa(cardHtml, el.getAttribute('name'))
       })
   })
+
+  document.querySelector('#inputSearch').addEventListener('keyup', (e) => {
+    buscarElemento(e.target.value);
+});
 
     return subdocument
 }

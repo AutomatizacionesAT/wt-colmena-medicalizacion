@@ -57,6 +57,10 @@ export default () => {
         })
     })
 
+    document.querySelector('#inputSearch').addEventListener('keyup', (e) => {
+        buscarElemento(e.target.value);
+    });
+
     /** **/
 
     subdocument.querySelectorAll('.hook__hook--btn').forEach((button) => {

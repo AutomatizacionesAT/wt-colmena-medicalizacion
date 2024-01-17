@@ -54,6 +54,10 @@ export default () => {
         })
     })
 
+    document.querySelector('#inputSearch').addEventListener('keyup', (e) => {
+        buscarElemento(e.target.value);
+    });
+
     /** **/
     return subdocument
 }
