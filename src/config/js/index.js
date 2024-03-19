@@ -181,7 +181,7 @@ const setConfigIndex = (props) => {
     const sendForm = document.getElementById("sendForm");
 
     if (!sessionStorage.getItem("session")) {
-      sendForm.parentNode.classList.remove("hide");
+      sendForm.parentNode.parentNode.classList.remove("hide");
     }
 
     sendForm.addEventListener("submit", (e) => {
@@ -194,7 +194,7 @@ const setConfigIndex = (props) => {
         observaciones: e.target.elements[3].value,
       };
 
-      e.target.parentNode.remove();
+      e.target.parentNode.parentNode.remove();
       Swal.fire({
         icon: "info",
         title: "Enviando",

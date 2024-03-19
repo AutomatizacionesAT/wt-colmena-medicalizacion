@@ -42,7 +42,7 @@
             </ul>
         </nav>
         <div class="header__versionbx">
-            <p>V. 1.0.1</p>
+            <p>V. 1.0.2</p>
         </div>
     </header>
     <main id="root" class="root">
@@ -68,7 +68,20 @@
         </button>
     </div>
     <div class="sessionRec hide">
-        <form class="form" id="sendForm">
+        <div class="sessionRec__data">
+            <span class="sessionRec__data--title">Web Training</span>
+
+            <figure>
+                <img src="./config/assets/img/index/logoSIn.png" alt="Logo" />
+            </figure>
+
+            <div class="sessionRec__data--footer">
+                <span><strong>Automatizaciones</strong> Formación</span>
+                <p>v1.0.0</p>
+            </div>
+        </div>
+		<div class="sessionRec__form">
+            <form class="form" id="sendForm">
             <p class="title">Registro de acceso</p>
             <p class="message">Agrega tus datos, para llevar el registro obligatorio</p>
             <label>
@@ -77,72 +90,21 @@
             </label> 
                     
             <label>
-                <datalist id="campana">
-                    <option value="BANCO CAJA SOCIAL"></option>
-                    <option value="BANCO POPULAR"></option>
-                    <option value="BANCO W"></option>
-                    <option value="BBVA"></option>
-                    <option value="CABLETICA/LIBERTY"></option>
-                    <option value="CLARO"></option>
-                    <option value="COLCERAMICAS"></option>
-                    <option value="COLFONDOS"></option>
-                    <option value="COLMENA"></option>
-                    <option value="COLSUBSIDIO"></option>
-                    <option value="COLPATRIA"></option>
-                    <option value="DAVIVIENDA"></option>
-                    <option value="DIDI"></option>
-                    <option value="FACEBOOK"></option>
-                    <option value="FALABELLA"></option>
-                    <option value="JETSMART"></option>
-                    <option value="LINDEE"></option>
-                    <option value="OXIGENOS"></option>
-                    <option value="PEPSICO"></option>
-                    <option value="PNC"></option>
-                    <option value="REMARK"></option>
-                    <option value="RUNT"></option>
-                    <option value="SHOPEE"></option>
-                    <option value="SUFI"></option>
-                    <option value="TELEFONICA"></option>
-                    <option value="VEOLIA"></option>
-                    <option value="VTR"></option>
-                    <option value="WHIRLPOOL"></option>
-                </datalist>
-                <input class="input" type="text" placeholder="" required="" list="campana">
+                <input class="input" type="text" placeholder="" readonly value="COLMENA">
                 <span>Camapaña</span>
             </label>
                 
             <label>
-                <datalist  class="input" id="modulo">
-                    <option value="B2B"></option>
-                    <option value="B2C"></option>
-                    <option value="RETENCION"></option>
-                    <option value="PQR"></option>
-                    <option value="VENTAS"></option>
-                    <option value="SOPORTE"></option>
-                    <option value="CET"></option>
-                    <option value="INBOUND"></option>
-                    <option value="OUTBOUND"></option>
-                    <option value="ANTIFRAUDE"></option>
-                    <option value="MEDICALIZACION"></option>
-                    <option value="SEGUROS DE VIDA"></option>
-                    <option value="PREVENCION"></option>
-                    <option value="INFORMACION Y MEDIOS"></option>
-                    <option value="HOGAR"></option>
-                    <option value="MOVIL"></option>
-                    <option value="SAC"></option>
-                    <option value="VTR"></option>
-                    <option value="CND"></option>
-                    <option value="SWAT"></option>
-                </datalist>
-                <input class="input" type="text" placeholder="" required="" list="modulo">
+                <input class="input" type="text" placeholder="" readonly value="MEDICALIZACION">
                 <span>Segmento</span>
             </label>
             <label>
-                <input class="input" type="text" placeholder="" required="">
+                <input class="input" type="text" placeholder="">
                 <span>Observaciones</span>
             </label>
             <button class="submit" type="submit" >Enviar</button>
         </form>
+        </div>
     </div>
 </body>
 </html>
