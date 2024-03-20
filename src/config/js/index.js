@@ -179,11 +179,9 @@ const setConfigIndex = (props) => {
 
   if (activeSQL_API) {
     const sendForm = document.getElementById("sendForm");
-
-    if (!sessionStorage.getItem("session")) {
+    if (sessionStorage.length == 0 || sessionStorage.session == "false") {
       sendForm.parentNode.parentNode.classList.remove("hide");
     }
-
     sendForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -216,7 +214,6 @@ const setConfigIndex = (props) => {
         .then((response) => response.json())
         .then((result) => {
           sessionStorage.setItem("session", true);
-          sendForm.parentNode.classList.add("hide");
           Swal.fire({
             heightAuto: false,
             icon: "success",
