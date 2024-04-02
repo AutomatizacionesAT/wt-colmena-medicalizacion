@@ -179,11 +179,18 @@ const setConfigIndex = (props) => {
 
   if (activeSQL_API) {
     const sendForm = document.getElementById("sendForm");
-    if (sessionStorage.length == 0 || sessionStorage.session == "false") {
+    if (sessionStorage?.session == "true") {
+      sendForm.parentNode.parentNode.classList.add("hide");
+    } else {
       sendForm.parentNode.parentNode.classList.remove("hide");
     }
     sendForm.addEventListener("submit", (e) => {
       e.preventDefault();
+      const idCedula = document.getElementById("cedula");
+      if (idCedula.value.length < 5) {
+        alert("Por favor, ingresa al menos 5 caracteres.");
+        return;
+      }
 
       const data = {
         usuario: e.target.elements[0].value,
