@@ -42,7 +42,7 @@
             </ul>
         </nav>
         <div class="header__versionbx">
-            <p>V. 1.1.0</p>
+            <p>V. 1.1.5</p>
         </div>
     </header>
     <main id="root" class="root">
@@ -68,43 +68,66 @@
         </button>
     </div>
     <div class="sessionRec hide">
-        <div class="sessionRec__data">
-            <span class="sessionRec__data--title">Web Training</span>
+      <div class="sessionRec__data">
+        <span class="sessionRec__data--title">Web Training</span>
 
-            <figure>
-                <img src="./config/assets/img/index/logoSIn.png" alt="Logo" />
-            </figure>
+        <figure>
+          <img src="./config/assets/img/index/logoSIn.png" alt="Logo" />
+        </figure>
 
-            <div class="sessionRec__data--footer">
-                <span><strong>Automatizaciones</strong> Formación</span>
-                <p>v1.1.0</p>
-            </div>
+        <div class="sessionRec__data--footer">
+          <span><strong>Automatizaciones</strong> Formación</span>
+          <p>v1.1.5</p>
         </div>
-		<div class="sessionRec__form">
-            <form class="form" id="sendForm">
-            <p class="title">Registro de acceso</p>
-            <p class="message">Agrega tus datos, para llevar el registro obligatorio</p>
-            <label>
-                <input class="input" type="number" placeholder="" required="" id="cedula">
-                <span>Cedula</span>
-            </label> 
-                    
-            <label>
-                <input class="input" type="text" placeholder="" readonly value="COLMENA">
-                <span>Campaña</span>
-            </label>
-                
-            <label>
-                <input class="input" type="text" placeholder="" readonly value="MEDICALIZACIÓN">
-                <span>Segmento</span>
-            </label>
-            <label>
-                <input class="input" type="text" placeholder="">
-                <span>Observaciones</span>
-            </label>
-            <button class="submit" type="submit" >Enviar</button>
+      </div>
+      <div class="sessionRec__form">
+        <form class="form" id="sendForm">
+          <p class="title">Registro de acceso</p>
+          <p class="message">
+            Agrega tus datos, para llevar el registro obligatorio
+          </p>
+          <label>
+            <input
+              class="input"
+              type="number"
+              placeholder=""
+              required=""
+              id="cedula"
+            />
+            <span>Cedula</span>
+          </label>
+
+          <label>
+            <input
+              class="input"
+              type="text"
+              placeholder=""
+              required=""
+              readonly
+              value="COLMENA"
+            />
+            <span>Camapaña</span>
+          </label>
+
+          <label>
+            <input
+              class="input"
+              type="text"
+              placeholder=""
+              required=""
+              readonly
+              value="INFORMACIÓN Y MEDIOS"
+            />
+            <span>Segmento</span>
+          </label>
+          <label>
+            <input class="input" type="text" placeholder="" value="" />
+            <span>Observaciones</span>
+            <span></span>
+          </label>
+          <button class="submit" type="submit">Enviar</button>
         </form>
-        </div>
+      </div>
     </div>
 </body>
 </html>

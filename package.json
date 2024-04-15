@@ -392,7 +392,8 @@
   },
   "scripts": {
     "build": "npx webpack --config webpack.config.prod.js",
-    "start": "npx webpack-dev-server --config webpack.config.js"
+    "start": "npx webpack-dev-server --config webpack.config.js",
+    "dev": "npx webpack-dev-server --config webpack.config.js"
   },
   "keywords": [],
   "author": "Nestor Gomez",
