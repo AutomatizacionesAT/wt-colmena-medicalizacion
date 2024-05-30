@@ -175,23 +175,51 @@ window.addEventListener("beforeunload", saveSession);
 
 // END CONSUMO API
 const setConfigIndex = (props) => {
+  console.log("mara");
   const { activeSQL_API } = props;
 
   if (activeSQL_API) {
     const sendForm = document.getElementById("sendForm");
-    if (sessionStorage?.session == "true") {
-      sendForm.parentNode.parentNode.classList.add("hide");
-    } else {
+    if (!sessionStorage.getItem("session")) {
       sendForm.parentNode.parentNode.classList.remove("hide");
     }
     sendForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const idCedula = document.getElementById("cedula");
-      if (idCedula.value.length < 5) {
-        alert("Por favor, ingresa al menos 5 caracteres.");
+      const cedulaInput = document.getElementById("cedula");
+      const validarCedula = (cedula) => {
+        if (cedula.length < 6) {
+          Swal.fire({
+            icon: "error",
+            title: "Por favor, ingresa al menos 5 caracteres",
+            heightAuto: false,
+            allowOutsideClick: true,
+            allowEscapeKey: true,
+          });
+          return;
+        } else if (cedula.length > 12) {
+          Swal.fire({
+            icon: "error",
+            title: "Por favor, ingresa menos de 12 caracteres",
+            heightAuto: false,
+            allowOutsideClick: true,
+            allowEscapeKey: true,
+          });
+          return;
+        }
+        let regex = /^(?!.*(\d)\1{5})\d{6,10}$/;
+        let result = regex.test(cedula);
+        return result;
+      };
+
+      if (!validarCedula(cedulaInput.value)) {
+        Swal.fire({
+          icon: "error",
+          title: "Por favor, ingresa una cédula válida",
+          heightAuto: false,
+          allowEscapeKey: true,
+        });
         return;
       }
-
       const data = {
         usuario: e.target.elements[0].value,
         campana: e.target.elements[1].value,
