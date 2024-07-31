@@ -5,17 +5,69 @@
 
 .header {
     display: flex;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     width: 90%;
     margin: auto;
     background-color: $s2-color;
     height: 60px;
+    z-index: 50;
     &__logobx {
         margin: 12px;
         width: 40px;
     }
-
+    & .Tiempo{
+        width: 200px;
+        height: 60px;
+        position: absolute;
+        bottom: -88vh;
+        left: 75px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        font-size: 1.2rem;
+        font-family: "col";
+        .cronometro{
+            font-size: 1.6rem;
+            padding: 8px;
+            background-color: #292c35;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            color: white;
+            font-weight: 800;
+        }
+        .botones{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: #292c35;
+            box-shadow: inset 0px -2px 5px white;
+            color: $w-color;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+            border-radius: 5px;
+            div{
+                padding: 0.7rem 2.5rem 0.7rem 2.5rem;
+                transition: 0.5s ease;
+                cursor: pointer;
+                &:hover{
+                    background-color: $p-color;
+                    color:$b-color;
+                    transition: 0.5s ease;
+                    scale: 1.1;
+                }
+                &.seleccionado{
+                    background-color: $p-color;
+                    color:$b-color;
+                    transition: 0.5s ease;
+                    scale: 1;
+                }
+            }
+        }
+    }
     &__versionbx {
         display: flex;
         justify-content: center;

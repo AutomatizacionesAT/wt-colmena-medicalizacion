@@ -115,6 +115,73 @@ const editor = document.getElementById("editor");
 const fullEditor = document.getElementById("fullEditor");
 const copiMisNotas = document.getElementById("copiMisNotas");
 
+
+// VARIABLES DE CRONOMETRO
+let cronometro;
+let tiempo;
+let segundos = 0, minutos = 0, horas = 0;
+const inicioR = document.getElementById('inicioR');
+const PausaR = document.getElementById('PausaR');
+const ReiniciarR = document.getElementById('ReiniciarR');
+const cro = document.getElementById('cronometro');
+let validarCronometro = false;
+
+// FUNCIONES CRONOMETRO
+const iniciarC = () => {
+  // Llamo a setInterval para que por cada segundo llame actualizarcronometro y almacenar el identificador
+  if(validarCronometro == false){
+    inicioR.classList.add('seleccionado');
+    PausaR.classList.remove('seleccionado');
+    ReiniciarR.classList.remove('seleccionado');
+    validarCronometro = true;
+    cronometro = setInterval(actualizarCronometro, 1000)
+  }
+}
+const detenerC = () => {
+  // Se llama clearInterval para deterner el cronometro que se pasa como parametro para tener el identificador guardado.
+  if(validarCronometro == true){
+    PausaR.classList.add('seleccionado');
+    inicioR.classList.remove('seleccionado');
+    ReiniciarR.classList.remove('seleccionado');
+    validarCronometro = false;
+    clearInterval(cronometro);
+  }
+}
+const actualizarCronometro = () => {
+  // Aumenta el valor de los segundos con cada llamado del setInterval
+  segundos++;
+  // Si los segundos superan 60 se accede a la condicional para formatear los segundos a 0 y aumentar los minutos.
+  if (segundos >= 60) {
+      segundos = 0;
+      minutos++;
+      // si los minutos superan 60 accede a la condicional y formatea los min a 0 y aunmentan las horas
+      if (minutos >= 60) {
+          minutos = 0;
+          horas++;
+      }
+  }
+  // cadena formada para actualizar el tiempo con cada llamada
+  tiempo = (horas ? (horas > 9 ? horas : "0" + horas) : "00") + ":" +
+      (minutos ? (minutos > 9 ? minutos : "0" + minutos) : "00") + ":" +
+      (segundos > 9 ? segundos : "0" + segundos);
+  cro.textContent = tiempo;
+  document.title = `${tiempo}`;
+}
+
+const reiniciarRe = () => {
+  // Reinicia el cronometro
+  PausaR.classList.remove('seleccionado');
+  inicioR.classList.remove('seleccionado');
+  ReiniciarR.classList.add('seleccionado');
+  validarCronometro = false;
+  clearInterval(cronometro);
+  segundos = 0;
+  minutos = 0;
+  horas = 0;
+  cro.textContent = "00:00:00";
+  document.title = `Web Training`;
+}
+
 let toolbarOptions = [
   [{ size: ["small", false, "large", "huge"] }],
   ["bold", "italic", "underline"],
@@ -273,3 +340,13 @@ const setConfigIndex = (props) => {
 setConfigIndex({
   activeSQL_API: true,
 });
+
+if (inicioR) {
+    inicioR.addEventListener("click", iniciarC);
+}
+if (PausaR) {
+    PausaR.addEventListener("click", detenerC);
+}
+if (ReiniciarR) {
+    ReiniciarR.addEventListener("click", reiniciarRe);
+}
