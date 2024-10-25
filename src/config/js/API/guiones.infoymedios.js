@@ -21,6 +21,6 @@ export const DB_Guiones_InfoYMedios = [
       },
       {
        "TITULO": "DESPEDIDA GENERAL EMPRESAS Y TRABAJADORES",
-       "GUION": "Gracias por comunicarse con Colmena Seguros de Vida, lo invitamos a interactuar con nuestro asesor virtual Mari quien le resolverá cualquier duda e inquietud a través de nuestro portal Web www.colmenaseguros.com o a nuestro WhatsApp 3157003033."
+       "GUION": "Gracias por comunicarse a la línea efectiva de COLMENA seguros riesgos laborales, le hablo xxxxxxxx, que tenga un excelente día."
       }
      ]
