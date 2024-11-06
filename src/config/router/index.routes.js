@@ -54,6 +54,9 @@ const router = async (route) => {
         } 
         case "#/OPCIONESCorrector": {
             return goRoute(views.corrector());
+        }
+        case "#/calculadora": {
+            return goRoute(views.calculadora());
         }     
         default: {
             return root.appendChild(views.notFound());

@@ -8,6 +8,7 @@ import LeyesMedic from './medicalizacion/leyes.controller.js'
 import LeyesInfoYMedios from './info_y_medios/leyes.controller.js'
 import LeyesPrevencion from './prevencion/leyes.controller.js'
 import NotFound from './notFound.controller.js'
+import Calculadora from './calculadora/calculadora.controller.js'
 // opciones S
 import codigos from './opcionesS/codigos.controller.js'
 import glosario from './opcionesS/glosario.controller.js'
@@ -28,7 +29,8 @@ const views = {
     glosario,
     corrector,
     aplicativosWeb,
-    notFound: NotFound
+    notFound: NotFound,
+    calculadora: Calculadora
 }
 
 export {views}

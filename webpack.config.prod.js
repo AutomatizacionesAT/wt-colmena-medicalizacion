@@ -8,7 +8,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   mode: "production",
   entry: "./src/config/js/index.js",
-  devtool: "source-map", // RECONOCER CORRECTAMENTE LOS SOURCE MAPS DE LAS LIBRERIAS
+  devtool: "eval-source-map", // RECONOCER CORRECTAMENTE LOS SOURCE MAPS DE LAS LIBRERIAS
   output: {
     path: __dirname + "/Web Training",
     filename: "noTocar/noTocar.js",
@@ -22,6 +22,9 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env'],
+          },
         },
       },
       {
@@ -67,11 +70,11 @@ module.exports = {
       filename: "noTocar/styles.css",
     }),
   ],
-  optimization: {
-    // optimiza el codigo
-    minimize: true,
-    minimizer: [new CssMinimiZerPlugin(), new TerserPlugin()],
-  },
+  // optimization: {
+  //   // optimiza el codigo
+  //   minimize: true,
+  //   minimizer: [new CssMinimiZerPlugin(), new TerserPlugin()],
+  // },
   resolve: {
     extensions: [".js"],
     alias: {
@@ -87,7 +90,7 @@ module.exports = {
   performance: {
     //
     hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000,
+    // maxEntrypointSize: 512000,
+    // maxAssetSize: 512000,
   },
 };
