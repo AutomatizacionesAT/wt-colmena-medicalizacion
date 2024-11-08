@@ -21,6 +21,7 @@ export default () => {
     const borrar1 = subdocument.querySelector("#borrar1");
 
     borrar1.addEventListener("click", () => {
+        clearErrorIfPresent()
         inputCalc.value = inputCalc.value.slice(0, -1);
     })
 
