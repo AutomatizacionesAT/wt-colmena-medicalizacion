@@ -9,6 +9,14 @@ export default () => {
 
     /** FUNCIONES INTERNAS DEL ELEMENTO**/
 
+    let hash = window.location.hash;
+
+    if (hash === '#/calculadora') {
+        setTimeout(() => {
+            subdocument.querySelector("#input-calc").focus();
+        }, 0);
+    }
+
     const inputCalc = subdocument.querySelector("#input-calc");
     const borrar1 = subdocument.querySelector("#borrar1");
 
@@ -17,6 +25,7 @@ export default () => {
     })
 
     inputCalc.addEventListener("keydown", (event) => {
+        clearErrorIfPresent()
         const allowedKeys = [
             "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
             "+", "-", "*", "/", ".",
@@ -46,6 +55,7 @@ export default () => {
     const numButtons = subdocument.querySelectorAll(".button-num");
     numButtons.forEach(button => {
         button.addEventListener("click", () => {
+            clearErrorIfPresent()
             inputCalc.value += button.innerText;
         });
     });
@@ -55,6 +65,7 @@ export default () => {
         const operator = button.getAttribute("data-operator");
 
         button.addEventListener("click", () => {
+            clearErrorIfPresent()
             if (isLastCharacterOperator(inputCalc.value)) {
                 return;
             }
@@ -76,7 +87,7 @@ export default () => {
         try {
             if (inputCalc.value.includes("/0")) {
                 inputCalc.value = "No se puede dividir entre cero";
-                inputCalc.classList.add("errorMessage");
+                inputCalc.classList.add("errorMessage")
                 return;
             }
             let result = eval(inputCalc.value);
@@ -126,6 +137,16 @@ export default () => {
             inputCalc.classList.remove("errorMessage2");
         }
     });
+
+    const clearErrorIfPresent = () => {
+        if (inputCalc.value === "Error" || inputCalc.value === "No se puede dividir entre cero") {
+            inputCalc.value = "";
+            inputCalc.classList.remove("errorMessage");
+            inputCalc.classList.remove("errorMessage2");
+        }
+    };
+
+
 
     /** **/
 

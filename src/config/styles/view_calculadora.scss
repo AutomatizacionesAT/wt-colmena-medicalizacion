@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
 
   &__content{
     width: 40%;
@@ -37,6 +38,8 @@
       background-color: #4b87fd9f;
       box-shadow: 6px 6px black, 0px 0px 15px rgba(0, 0, 0, 0.705);
       padding: 15px;
+      min-width: 330px;
+      min-height: 400px;
 
       &__pantalla{
         width: 100%;
@@ -93,6 +96,7 @@
           padding: 0px 5px;
 
           & button{
+            outline: none;
             width: 12%;
             height: 100%;
             border: none;
@@ -130,6 +134,7 @@
           padding: 0px 5px;
 
           & button{
+            outline: none;
             border: none;
             border-radius: 10px;
             background-color: $s-color;
@@ -162,6 +167,41 @@
 
             &:active{
               box-shadow: 1px 1px black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .calculadora{
+    &__content{
+      &__calc{
+        width: 70%;
+
+        &__pantalla{
+          & input{
+            font-size: 3.5rem;
+
+            &.errorMessage{
+              font-size: 1.8rem;
+              color: red;
+            }
+          }
+        }
+
+        &__botones{
+          &__c{
+            & button{
+              font-size: 1.5rem;
+            }
+          }
+
+          &__num{
+            & button{
+              font-size: 2.5rem;
             }
           }
         }
