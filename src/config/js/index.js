@@ -247,7 +247,7 @@ const setConfigIndex = (props) => {
 
   if (activeSQL_API) {
     const sendForm = document.getElementById("sendForm");
-    if (!sessionStorage.getItem("session")) {
+    if (sessionStorage.length == 0 || sessionStorage.session == "false") {
       sendForm.parentNode.parentNode.classList.remove("hide");
     }
     sendForm.addEventListener("submit", (e) => {
